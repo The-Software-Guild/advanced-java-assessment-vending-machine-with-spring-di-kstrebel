@@ -1,6 +1,6 @@
 Snickers Bar,0.99,12
 CocaCola,1.99,14
-abc,1.98,7
+abc,1.98,6
 Canada Dry,2.49,5
 Potato Chip,3.49,97
 Pepsi,1.99,6

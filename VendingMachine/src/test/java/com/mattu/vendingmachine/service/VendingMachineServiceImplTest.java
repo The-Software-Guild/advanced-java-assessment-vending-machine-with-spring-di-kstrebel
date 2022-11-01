@@ -22,6 +22,9 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -35,16 +38,20 @@ public class VendingMachineServiceImplTest {
     
     public VendingMachineServiceImplTest()
     {
-        try{
-        VendingMachineDao dao = new VendingMachineDaoImpl();
-        AuditDao auditDao = new AuditDaoImpl();
+        // try{
+        // VendingMachineDao dao = new VendingMachineDaoImpl();
+        // AuditDao auditDao = new AuditDaoImpl();
 
-        service = new VendingMachineServiceImpl(dao, auditDao);
-        }
-        catch (VendingMachineException e)
-        {
-            //displayErrorMessage(e.getMessage());
-        }
+        // service = new VendingMachineServiceImpl(dao, auditDao);
+        // }
+        // catch (VendingMachineException e)
+        // {
+        //     //displayErrorMessage(e.getMessage());
+        // }
+
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        service = ctx.getBean("service", VendingMachineServiceImpl.class);
     }
     
     @BeforeAll

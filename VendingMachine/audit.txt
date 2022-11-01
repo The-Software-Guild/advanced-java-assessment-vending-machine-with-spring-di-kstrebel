@@ -65,3 +65,5 @@ Fri Oct 21 08:34:16 PDT 2022 :: Item Snickers Bar has been sold. Number in Inven
 2022-10-31T16:10:22.264394400 : Item Gum has been sold. Number in Inventory: 8
 2022-10-31T16:11:47.129490400 : Item TestItem has been sold. Number in Inventory: 0
 2022-10-31T16:12:35.052455800 : Item TestItem has been sold. Number in Inventory: 0
+2022-11-01T15:19:57.279957100 : Item abc has been sold. Number in Inventory: 6
+2022-11-01T15:25:37.786112800 : Item TestItem has been sold. Number in Inventory: 0

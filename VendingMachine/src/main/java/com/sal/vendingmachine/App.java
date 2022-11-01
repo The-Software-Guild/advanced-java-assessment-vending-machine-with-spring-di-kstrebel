@@ -1,6 +1,10 @@
 
 package com.sal.vendingmachine;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.sal.vendingmachine.controller.VendingMachineController;
 // import com.sal.vendingmachine.dao.VendingMachineDao;
 // import com.sal.vendingmachine.dao.VendingMachineDaoImpl;
@@ -20,14 +24,19 @@ import com.sal.vendingmachine.ui.VendingMachineView;
 public class App {
     public static void main(String[] args) throws VendingMachineException
     {
-        UserIO io = new UserIOImpl();
+        // UserIO io = new UserIOImpl();
 
-        // VendingMachineDao dao = new VendingMachineDaoImpl();
-        VendingMachineView view = new VendingMachineView(io);
-        VendingMachineService service = new VendingMachineServiceImpl();
+        // VendingMachineView view = new VendingMachineView(io);
+        // VendingMachineService service = new VendingMachineServiceImpl();
 
-        VendingMachineController controller = new VendingMachineController(view, service);
+        // VendingMachineController controller = new VendingMachineController(view, service);
+
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        VendingMachineController controller = ctx.getBean("controller", VendingMachineController.class);
 
         controller.run();
+
+        // ((AnnotationConfigApplicationContext) ctx).close();
     }
 }
